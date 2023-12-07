@@ -1,0 +1,8 @@
+.dnd-elem {
+  border: 1px solid lightgray;
+  padding: 0.5rem 1rem;
+  margin-bottom: .5rem;
+  background-color: #FFF;
+  cursor: "move";
+}
+
