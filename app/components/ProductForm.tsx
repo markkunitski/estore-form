@@ -3,7 +3,7 @@ import "react-quill/dist/quill.snow.css";
 // styles
 import { zodResolver } from "@hookform/resolvers/zod";
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Alert, Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -55,10 +55,15 @@ const ProductForm = () => {
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     try {
-      // Check if selectedKeywords
+      // Check if selectedKeywords is not empty
       if (selectedKeywords.length) {
         data = { ...data, keywords: selectedKeywords };
       }
+      // Check if bulletPoints is not empty
+      if (bulletPoints.length) {
+        data = { ...data, bulletPoints: bulletPoints };
+      }
+      
       console.log(data);
 
       // API request for the future
@@ -79,11 +84,6 @@ const ProductForm = () => {
   const handleQuillChange = (content: string) => {
     setValue("description", content);
   };
-
-  // Handle value of the bulletPoints field in the form
-  useEffect(() => {
-    setValue("bulletPoints", bulletPoints);
-  }, [bulletPoints]);
 
   return (
     <>
