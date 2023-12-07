@@ -1,7 +1,7 @@
+import { DragItem, ItemTypes } from "@/app/types/DNDTypes";
 import React, { FC, useRef, useState } from "react";
 import { XYCoord, useDrag, useDrop } from "react-dnd";
 import { EditRemoveBtnGroup } from "../EditRemoveBtnGroup";
-import { DragItem, ItemTypes } from "@/app/types/DNDTypes";
 
 // Define the props for the DNDCard component
 export interface CardProps {

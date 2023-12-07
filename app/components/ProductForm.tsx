@@ -2,16 +2,14 @@
 import "react-quill/dist/quill.snow.css";
 // styles
 import { zodResolver } from "@hookform/resolvers/zod";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { Alert, Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { SubmitHandler, useForm } from "react-hook-form";
-import ReactQuill from "react-quill";
 import CreatableSelect from "react-select/creatable";
 import { FormValues, schema } from "../utils/schema";
 import { DNDContainer } from "./DragAndDrop/DNDContainer";
-import { submitFormData } from "./API/submitForm";
-import dynamic from "next/dynamic";
 const DynamicReactQuill = dynamic(() => import("react-quill"), {
   ssr: false,
   loading: () => <div className="suspense animate-pulse"></div>,
